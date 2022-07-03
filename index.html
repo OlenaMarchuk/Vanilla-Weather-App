@@ -17,7 +17,192 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather App</h1>
+      <div class="row city-name">
+        <div class="col-xs-12 col-md-4">
+          <form>
+            <input
+              type="text"
+              class="form-control city-search"
+              id="cityInput"
+              autofocus="on"
+              placeholder="Enter your city"
+            />
+            <input
+              type="button"
+              class="btn btn-outline-secondary"
+              id="currentButton"
+              value="CURRENT"
+            />
+            <input
+              type="submit"
+              class="btn btn-outline-secondary"
+              id="searchButton"
+              value="SEARCH"
+            />
+          </form>
+        </div>
+        <div class="col-xs-12 col-md-6 main-city">
+          <div class="row">
+            <div class="col kyiv">
+              <a href="#" class="kyiv">KYIV</a>
+            </div>
+            <div class="col london">
+              <a href="#" class="london">LONDON </a>
+            </div>
+            <div class="col new-york">
+              <a href="#" class="new-york">NEW YORK</a>
+            </div>
+            <div class="col tokio"><a href="#" class="tokio">TOKIO</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="row main-info">
+        <div class="col-xs-12 col-md-5">
+          <h1></h1>
+          <div class="row row-cols-2">
+            <div class="col-6 current-date">Friday, May 20</div>
+            <div class="col-6 current-time">18:45</div>
+            <div class="col-8">
+              <div class="current-temp">
+                <span class="tempValue"></span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="row">
+                <div class="col-4 current-night-temp">
+                  min
+                  <span id="minTemp"></span>
+                  °C
+                </div>
+                <div class="col-4 current-day-temp">
+                  max
+                  <span id="maxTemp"></span>
+                  °C
+                </div>
+              </div>
+              <ul class="aditional-info">
+                <li class="precipitation">
+                  <span id="precipitation"></span>
+                </li>
+                <li class="humidity">
+                  Humidity:
+                  <span id="humidity"></span>
+                  %
+                </li>
+                <li class="wind">
+                  Wind:
+                  <span id="wind"></span>
+                  km/h
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <img
+                src="images/cloudy-day.png"
+                alt="cloud-sun"
+                class="central-img"
+              />
+              <div class="change-system">
+                <span> <a href="#" id="celsiusLink">°C</a></span> /
+                <span class="fahrenheit">
+                  <a href="#" id="fahrenheitLink">°F</a>
+                </span>
+              </div>
+              <div id="description"></div>
+            </div>
+          </div>
+          <div class="row"></div>
+        </div>
+        <div class="col-xs-12 col-md-7">
+          <ul class="forecast-calendar">
+            <li class="forcast-everyday">
+              <div class="week-day details">Saturday</div>
+              <div class="date details">May, 21</div>
+              <img
+                src="images/cloudy-day.png"
+                alt="cloud-sun"
+                class="details"
+              />
+              <div class="day-temp details">
+                <span class="tempValue">21</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">15</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>
+            <li class="forcast-everyday">
+              <div class="week-day details">Sunday</div>
+              <div class="date details">May, 22</div>
+              <img
+                src="images/cloudy-day.png"
+                alt="cloud-sun"
+                class="details"
+              />
+              <div class="day-temp details">
+                <span class="tempValue">20</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">14</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>
+            <li class="forcast-everyday">
+              <div class="week-day details">Monday</div>
+              <div class="date details">May, 23</div>
+              <img src="images/cloud.png" alt="cloud" class="details" />
+              <div class="day-temp details">
+                <span class="tempValue">18</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">13</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>
+            <li class="forcast-everyday">
+              <div class="week-day details">Tuesday</div>
+              <div class="date details">May, 24</div>
+              <img src="images/cloud.png" alt="cloud" class="details" />
+              <div class="day-temp details">
+                <span class="tempValue">21</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">16</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>
+            <li class="forcast-everyday">
+              <div class="week-day details">Wednesday</div>
+              <div class="date details">May, 25</div>
+              <img src="images/rainy.png" alt="rainy" class="details" />
+              <div class="day-temp details">
+                <span class="tempValue">20</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">16</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>
+            <li class="forcast-everyday">
+              <div class="week-day details">Thursday</div>
+              <div class="date details">May, 26</div>
+              <img src="images/rainy.png" alt="rainy" class="details" />
+              <div class="day-temp details">
+                <span class="tempValue">20</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">16</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
