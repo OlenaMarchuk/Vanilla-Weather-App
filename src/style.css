@@ -155,6 +155,9 @@ h1 {
 img.details {
   max-width: 50px;
 }
+small {
+  text-align: center;
+}
 .author-link {
   text-decoration: none;
 }
