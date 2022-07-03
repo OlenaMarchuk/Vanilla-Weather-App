@@ -155,8 +155,10 @@ h1 {
 img.details {
   max-width: 50px;
 }
-small {
+footer {
   text-align: center;
+  margin-top: 40px;
+  font-size: small;
 }
 .author-link {
   text-decoration: none;
