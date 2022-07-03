@@ -47,9 +47,7 @@ h1 {
 .kyiv:hover,
 .london:hover,
 .new-york:hover,
-.tokio:hover,
-#fahrenheitLink:hover,
-#celsiusLink:hover {
+.tokio:hover {
   cursor: pointer;
   text-decoration: underline;
   color: rgb(55, 52, 52);
@@ -105,11 +103,25 @@ h1 {
   margin-top: 7px;
 }
 
-#celsiusLink,
-#fahrenheitLink {
+.active {
+  font-weight: 100;
+  color: rgb(55, 52, 52);
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: rgb(55, 52, 52);
+  cursor: auto;
+}
+.disactive {
   font-weight: bold;
   color: rgb(55, 52, 52);
   text-decoration: none;
+}
+.disactive:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(55, 52, 52);
 }
 #description {
   z-index: 1;
@@ -119,10 +131,7 @@ h1 {
   font-style: italic;
   text-transform: capitalize;
 }
-.percipitation {
-  font-weight: bold;
-  color: ;
-}
+
 .central-img {
   position: relative;
   right: 150px;
