@@ -1,3 +1,157 @@
+body {
+  display: block;
+  margin: 0 auto;
+  background-color: #faf6ba;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  padding-left: 0;
+}
 h1 {
-  color: red;
+  font-weight: 700;
+  font-style: italic;
+}
+.city-search {
+  margin-top: 20px;
+  border: 3px solid white;
+  background-color: #fdfbd9;
+  font-style: italic;
+}
+#currentButton,
+#searchButton {
+  border: 3px solid white;
+  background-color: #fdfbd9;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+#currentButton {
+  margin-left: 95px;
+}
+.main-city,
+.kyiv,
+.london,
+.new-york,
+.tokio {
+  text-align: center;
+  padding-right: 0;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(55, 52, 52);
+  text-decoration: none;
+}
+.kyiv:hover,
+.london:hover,
+.new-york:hover,
+.tokio:hover,
+#fahrenheitLink:hover,
+#celsiusLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(55, 52, 52);
+}
+.search-btn:hover,
+.current-btn:hover {
+  background-color: #c2bf8c;
+  border-color: white;
+}
+.main-info {
+  margin-top: 30px;
+  color: rgb(55, 52, 52);
+}
+.current-date {
+  font-style: italic;
+  font-weight: 500;
+}
+.current-time {
+  z-index: 1;
+  font-weight: 500;
+}
+.current-temp {
+  font-size: 53px;
+  font-weight: 700;
+}
+.current-night-temp,
+.current-day-temp {
+  font-size: 15px;
+  font-style: italic;
+}
+.current-night-temp {
+  text-align: right;
+}
+.current-day-temp {
+  font-weight: 700;
+}
+.aditional-info {
+  list-style-type: none;
+  font-size: 12px;
+  font-style: italic;
+  padding: 0;
+  line-height: 13px;
+  margin-top: 7px;
+}
+.change-system {
+  z-index: 1;
+  position: relative;
+  bottom: 170px;
+  right: 80px;
+}
+#celsiusLink,
+#fahrenheitLink {
+  font-weight: bold;
+  color: rgb(55, 52, 52);
+  text-decoration: none;
+}
+#description {
+  z-index: 1;
+  position: relative;
+  bottom: 165px;
+  right: 100px;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.percipitation {
+  font-weight: bold;
+  color: ;
+}
+.central-img {
+  position: relative;
+  right: 90px;
+  bottom: 25px;
+  max-width: 180px;
+}
+.forecast-calendar {
+  color: rgb(55, 52, 52);
+}
+.forcast-everyday {
+  list-style-type: none;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 45px;
+  margin-right: 1px;
+  width: 102px;
+  padding: 20px 5px;
+  z-index: 1;
+  text-align: center;
+  background-color: #fdfbd9;
+  transition: all 200ms ease-in-out;
+}
+.forcast-everyday:hover {
+  background-color: #c2bf8c;
+}
+.week-day {
+  font-weight: bold;
+}
+.date {
+  font-style: italic;
+}
+.day-temp {
+  font-weight: bold;
+}
+img.details {
+  max-width: 50px;
 }
