@@ -24,7 +24,7 @@
               type="text"
               class="form-control city-search"
               id="cityInput"
-              autofocus="on"
+              autofocus="off"
               placeholder="Enter your city"
             />
             <input
@@ -63,11 +63,17 @@
             <div class="col-6 current-date"></div>
             <div class="col-6 current-time"></div>
             <div class="col-8">
-              <div class="current-temp">
-                <span class="tempValue"></span>
-                <span class="measureSystem">°C</span>
+              <div>
+                <span class="tempValue current-temp"></span>
+                <span class="measureSystem switch-measure-system"
+                  ><a href="#" id="celsiusLink">°C</a>/<a
+                    href="#"
+                    id="fahrenheitLink"
+                    >°F</a
+                  ></span
+                >
               </div>
-              <div class="row">
+              <div class="row day-night-temp">
                 <div class="col-4 current-night-temp">
                   min
                   <span id="minTemp"></span>
@@ -80,9 +86,6 @@
                 </div>
               </div>
               <ul class="aditional-info">
-                <li class="precipitation">
-                  <span id="precipitation"></span>
-                </li>
                 <li class="humidity">
                   Humidity:
                   <span id="humidity"></span>
@@ -97,12 +100,6 @@
             </div>
             <div class="col-4">
               <img src="" alt="" class="central-img" />
-              <div class="change-system">
-                <span> <a href="#" id="celsiusLink">°C</a></span> /
-                <span class="fahrenheit">
-                  <a href="#" id="fahrenheitLink">°F</a>
-                </span>
-              </div>
               <div id="description"></div>
             </div>
           </div>

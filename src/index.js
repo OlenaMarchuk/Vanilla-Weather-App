@@ -67,12 +67,14 @@ function findCurrentLocation(position) {
   let apiKey = `932dccfce347762cffb3c2a4870d3177`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayInfo);
+ 
 }
 function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findCurrentLocation);
 }
 function displayInfo(response) {
+    
   let mainCity = document.querySelector("h1");
   mainCity.innerHTML = response.data.name.toUpperCase();
   let tempValue = document.querySelector("span.tempValue");
@@ -81,14 +83,14 @@ function displayInfo(response) {
   currentMinTemp.innerHTML = Math.round(response.data.main.temp_min);
   let currentMaxTemp = document.querySelector("#maxTemp");
   currentMaxTemp.innerHTML = Math.round(response.data.main.temp_max);
-  //let precipitation = document.querySelector("#precipitation");
-  //precipitation.innerHTML = Math.round(response.data....); (i didn't find this data in Openweather)
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = Math.round(response.data.main.humidity);
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+  let centralImg = document.querySelector("img.central-img");
+  centralImg.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) = response.data.weather[0].icon;
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", submitCity);
