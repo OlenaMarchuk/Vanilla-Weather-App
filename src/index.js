@@ -76,12 +76,14 @@ function displayInfo(response) {
   let mainCity = document.querySelector("h1");
   mainCity.innerHTML = response.data.name.toUpperCase();
   celsiusTemp = response.data.main.temp;
+  maxTemp = response.data.main.temp_max;
+  minTemp = response.data.main.temp_min;
   let tempValue = document.querySelector("span.tempValue");
   tempValue.innerHTML = Math.round(celsiusTemp);
   let currentMinTemp = document.querySelector("#minTemp");
-  currentMinTemp.innerHTML = Math.round(response.data.main.temp_min);
+  currentMinTemp.innerHTML = Math.round(minTemp);
   let currentMaxTemp = document.querySelector("#maxTemp");
-  currentMaxTemp.innerHTML = Math.round(response.data.main.temp_max);
+  currentMaxTemp.innerHTML = Math.round(maxTemp);
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = Math.round(response.data.main.humidity);
   let windSpeed = document.querySelector("#wind");
@@ -103,17 +105,27 @@ function displayFahrenheitTemp(event) {
   celsiusLink.classList.add("disactive");
   fahrenheitLink.classList.remove("disactive");
   fahrenheitLink.classList.add("active");
+  let currentFahMaxTemp = document.querySelector("#maxTemp");
+  currentFahMaxTemp.innerHTML = Math.round(maxTemp * 1.8 + 32);
+  let currentFahMinTemp = document.querySelector("#minTemp");
+  currentFahMinTemp.innerHTML = Math.round(minTemp * 1.8 + 32);
 }
 function displayCelsiusTemp(event) {
   event.preventDefault();
   let tempValue = document.querySelector("span.tempValue");
   tempValue.innerHTML = Math.round(celsiusTemp);
+  let currentFahMaxTemp = document.querySelector("#maxTemp");
+  currentFahMaxTemp.innerHTML = Math.round(maxTemp);
+  let currentFahMinTemp = document.querySelector("#minTemp");
+  currentFahMinTemp.innerHTML = Math.round(minTemp);
   celsiusLink.classList.remove("disactive");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   fahrenheitLink.classList.add("disactive");
 }
 let celsiusTemp = null;
+let maxTemp = null;
+let minTemp = null;
 let form = document.querySelector("form");
 form.addEventListener("submit", submitCity);
 
