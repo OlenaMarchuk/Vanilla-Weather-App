@@ -70,6 +70,7 @@ h1 {
 .current-time {
   z-index: 1;
   font-weight: 500;
+  font-style: italic;
 }
 .current-temp {
   font-size: 53px;
@@ -97,7 +98,7 @@ h1 {
 .change-system {
   z-index: 1;
   position: relative;
-  bottom: 170px;
+  bottom: 17px;
   right: 80px;
 }
 #celsiusLink,
@@ -109,7 +110,7 @@ h1 {
 #description {
   z-index: 1;
   position: relative;
-  bottom: 165px;
+  bottom: 12px;
   right: 100px;
   font-style: italic;
   text-transform: capitalize;
