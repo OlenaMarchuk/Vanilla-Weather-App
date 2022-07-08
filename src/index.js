@@ -72,6 +72,40 @@ function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findCurrentLocation);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+  ];
+  let forecastHTML = `<ul class="forecast-calendar">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <li class="forcast-everyday">
+              <div class="week-day details">${day}</div>
+              <div class="date details">May, 21</div>
+              <img src="" alt="" class="details" />
+              <div class="day-temp details">
+                <span class="tempValue">21</span>
+                <span class="measureSystem">°C</span>
+              </div>
+              <div class="night-temp details">
+                <span class="tempValue">15</span>
+                <span class="measureSystem">°C</span>
+              </div>
+            </li>`;
+  });
+
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
 function displayInfo(response) {
   let mainCity = document.querySelector("h1");
   mainCity.innerHTML = response.data.name.toUpperCase();
