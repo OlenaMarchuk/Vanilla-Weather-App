@@ -11,6 +11,9 @@ h1 {
   font-weight: 700;
   font-style: italic;
 }
+.city-name {
+  margin-top: 20px;
+}
 .city-search {
   margin-top: 20px;
   border: 3px solid white;
