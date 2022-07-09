@@ -110,10 +110,12 @@ function formatDatesForecast(timestamp) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
 
+  let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<ul class="forecast-calendar">`;
   forecast.forEach(function (forecastDay, index) {
+    forecastMaxTemp = forecastDay.temp.max;
+    forecastMinTemp = forecastDay.temp.min;
     if ((index > 0) & (index < 7)) {
       forecastHTML =
         forecastHTML +
@@ -127,15 +129,18 @@ function displayForecast(response) {
               <img src="https://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
               }@2x.png" alt="" class="details" />
-              <div class="day-temp details">
-                <span class="tempValue">${Math.round(forecastDay.temp.max)}
+              <div>
+              <span class="night-temp details">
+                <span class="tempValue">${Math.round(forecastMinTemp)}
                 </span>
-                <span class="measureSystem">°C</span>
-              </div>
-              <div class="night-temp details">
-                <span class="tempValue">${Math.round(forecastDay.temp.min)}
+                <span class="measureSystem">°</span>
+              </span>
+              <span class="day-temp details">
+                <span class="tempValue">${Math.round(forecastMaxTemp)}
                 </span>
-                <span class="measureSystem">°C</span>
+                <span class="measureSystem">°</span>
+              </span>
+              
               </div>
             </li>`;
     }
@@ -175,45 +180,16 @@ function displayInfo(response) {
   );
   getForecast(response.data.coord);
 }
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenhietTemp = celsiusTemp * 1.8 + 32;
-  let tempValue = document.querySelector("span.tempValue");
-  tempValue.innerHTML = Math.round(fahrenhietTemp);
-  celsiusLink.classList.remove("active");
-  celsiusLink.classList.add("disactive");
-  fahrenheitLink.classList.remove("disactive");
-  fahrenheitLink.classList.add("active");
-  let currentFahMaxTemp = document.querySelector("#maxTemp");
-  currentFahMaxTemp.innerHTML = Math.round(maxTemp * 1.8 + 32);
-  let currentFahMinTemp = document.querySelector("#minTemp");
-  currentFahMinTemp.innerHTML = Math.round(minTemp * 1.8 + 32);
-}
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let tempValue = document.querySelector("span.tempValue");
-  tempValue.innerHTML = Math.round(celsiusTemp);
-  let currentFahMaxTemp = document.querySelector("#maxTemp");
-  currentFahMaxTemp.innerHTML = Math.round(maxTemp);
-  let currentFahMinTemp = document.querySelector("#minTemp");
-  currentFahMinTemp.innerHTML = Math.round(minTemp);
-  celsiusLink.classList.remove("disactive");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  fahrenheitLink.classList.add("disactive");
-}
+
 let celsiusTemp = null;
 let maxTemp = null;
 let minTemp = null;
+let forecastMaxTemp = null;
+let forecastMinTemp = null;
 let form = document.querySelector("form");
 form.addEventListener("submit", submitCity);
 
 let currentButton = document.querySelector("#currentButton");
 currentButton.addEventListener("click", getLocation);
 
-let fahrenheitLink = document.querySelector("#fahrenheitLink");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsiusLink");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 retrieveCityInfo("Kyiv");
