@@ -53,7 +53,22 @@ function submitCity(event) {
   let cityName = city.value;
   retrieveCityInfo(cityName);
 }
-
+function submitKyiv(event) {
+  event.preventDefault();
+  retrieveCityInfo("Kyiv");
+}
+function submitLondon(event) {
+  event.preventDefault();
+  retrieveCityInfo("London");
+}
+function submitNewYork(event) {
+  event.preventDefault();
+  retrieveCityInfo("New York");
+}
+function submitTokio(event) {
+  event.preventDefault();
+  retrieveCityInfo("Tokio");
+}
 function retrieveCityInfo(cityName) {
   let apiKey = `932dccfce347762cffb3c2a4870d3177`;
   let unit = "metric";
@@ -158,15 +173,12 @@ function getForecast(coordinates) {
 function displayInfo(response) {
   let mainCity = document.querySelector("h1");
   mainCity.innerHTML = response.data.name.toUpperCase();
-  celsiusTemp = response.data.main.temp;
-  maxTemp = response.data.main.temp_max;
-  minTemp = response.data.main.temp_min;
   let tempValue = document.querySelector("span.tempValue");
-  tempValue.innerHTML = Math.round(celsiusTemp);
+  tempValue.innerHTML = Math.round(response.data.main.temp);
   let currentMinTemp = document.querySelector("#minTemp");
-  currentMinTemp.innerHTML = Math.round(minTemp);
+  currentMinTemp.innerHTML = Math.round(response.data.main.temp_min);
   let currentMaxTemp = document.querySelector("#maxTemp");
-  currentMaxTemp.innerHTML = Math.round(maxTemp);
+  currentMaxTemp.innerHTML = Math.round(response.data.main.temp_max);
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = Math.round(response.data.main.humidity);
   let windSpeed = document.querySelector("#wind");
@@ -180,12 +192,10 @@ function displayInfo(response) {
   );
   getForecast(response.data.coord);
 }
-
-let celsiusTemp = null;
-let maxTemp = null;
-let minTemp = null;
-let forecastMaxTemp = null;
-let forecastMinTemp = null;
+document.querySelector("#kyiv").addEventListener("click", submitKyiv);
+document.querySelector("#london").addEventListener("click", submitLondon);
+document.querySelector("#new-york").addEventListener("click", submitNewYork);
+document.querySelector("#tokio").addEventListener("click", submitTokio);
 let form = document.querySelector("form");
 form.addEventListener("submit", submitCity);
 

@@ -31,10 +31,10 @@ h1 {
   margin-left: 95px;
 }
 .main-city,
-.kyiv,
-.london,
-.new-york,
-.tokio {
+#kyiv,
+#london,
+#new-york,
+#tokio {
   text-align: center;
   padding-right: 0;
   margin-top: 20px;
@@ -44,10 +44,10 @@ h1 {
   color: rgb(55, 52, 52);
   text-decoration: none;
 }
-.kyiv:hover,
-.london:hover,
-.new-york:hover,
-.tokio:hover {
+#kyiv:hover,
+#london:hover,
+#new-york:hover,
+#tokio:hover {
   cursor: pointer;
   text-decoration: underline;
   color: rgb(55, 52, 52);
