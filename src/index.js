@@ -72,7 +72,8 @@ function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findCurrentLocation);
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = [
     "Saturday",
@@ -105,7 +106,12 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</ul>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+function getForecast(coordinates) {
+  let apiKey = `932dccfce347762cffb3c2a4870d3177`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayInfo(response) {
   let mainCity = document.querySelector("h1");
   mainCity.innerHTML = response.data.name.toUpperCase();
@@ -129,6 +135,7 @@ function displayInfo(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 function displayFahrenheitTemp(event) {
   event.preventDefault();
