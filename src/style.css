@@ -1,7 +1,7 @@
 body {
   display: block;
   margin: 0 auto;
-  background-color: #faf6ba;
+  background: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
   font-family: Arial, Helvetica, sans-serif;
 }
 ul {
@@ -17,13 +17,13 @@ h1 {
 .city-search {
   margin-top: 20px;
   border: 3px solid white;
-  background-color: #fdfbd9;
+  background: #8dc5df;
   font-style: italic;
 }
 #currentButton,
 #searchButton {
   border: 3px solid white;
-  background-color: #fdfbd9;
+  background: #8dc5df;
   font-weight: 600;
   padding: 7px 18px;
   border-radius: 15px;
@@ -55,9 +55,9 @@ h1 {
   text-decoration: underline;
   color: rgb(55, 52, 52);
 }
-.search-btn:hover,
-.current-btn:hover {
-  background-color: #c2bf8c;
+#currentButton:hover,
+#searchButton:hover {
+  background-color: #7be0d7;
   border-color: white;
 }
 .main-info {
@@ -134,11 +134,11 @@ h1 {
   padding: 20px 5px;
   z-index: 1;
   text-align: center;
-  background-color: #fdfbd9;
+  background: #8dc5df;
   transition: all 200ms ease-in-out;
 }
 .forcast-everyday:hover {
-  background-color: #c2bf8c;
+  background-color: #7be0d7;
 }
 .week-day {
   font-weight: bold;
